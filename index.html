@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="phone.css">
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="Home" class="home">
+      <!-- header -->
+      <header>
+        <nav>
+          <div class="navlinks">
+            <img src="images/icon-menu.svg" onclick="openMenu();" alt="" class="ham">
+            <img src="images/logo.svg" class="sneak" style="height: 25px" alt="" />
+            <div  class="nav-links">
+              <ul>
+                <li><a href="javascript:void(0)" onclick="closeMenu();" class="car"><img src="images/icon-close.svg" alt=""></a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-profile">
+            <div class="cart">
+              <img src="images/icon-cart.svg" onclick="stay();" onmouseover="remove();" class="cart"  id="cart" alt="Cart" />
+              <div id="cart-msg" class="cart-message">
+                <h1>Cart</h1>
+                <p id="change" class="empty" >Your cart is empty</p>
+                <div id="basket">
+                  <div class="basket-text">
+                    <img src="images/image-product-1-thumbnail.jpg" alt="">
+                    <div class="basket-msg">
+                     <p class="basketmsg">Fall Limited Edition Sneakers</p>
+                     <button id="basket-no" class="basket-no"></button>
+                    </div>
+                    <img src="images/icon-delete.svg" onclick="del();"  style="width: 20px; height: 20px;" alt="">
+                  </div>
+                  <button class="click"> Checkout</button>
+                </div>
+              </div>
+            </div>
+            <img src="images/image-avatar.png" class="avatar" alt="avatar" />
+          </div>
+        </nav>
+      </header>
+      <div id="Menu" class="nav-link">
+        <ul>
+          <li><a href="javascript:void(0)" onclick="closeMenu();" class="car"><img src="images/icon-close.svg" alt=""></a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <!-- header-end -->
+      <!-- page -->
+      <div class="body">
+        <!-- left-div -->
+        <div class="left-side">
+          <div class="main-pic">
+            <div id="scr" class="scr">
+              <img src="images/image-product-1.jpg" alt="" />
+            </div>
+            <div id="scr" class="scr pic2">
+              <img src="images/image-product-2.jpg" alt="" />
+            </div>
+            <div id="scr" class="scr pic2">
+              <img src="images/image-product-3.jpg" alt="" />
+            </div>
+            <div id="scr" class="scr pic2">
+              <img src="images/image-product-4.jpg" alt="" />
+            </div>
+            <div class="button">
+              <a class="next" onclick="Plus(-1)">&#10094;</a>
+              <a class="prev" onclick="Plus(1)">&#10095;</a>
+            </div>
+            <div class="flex-img">
+              <div class="overlay">
+                <img
+                class="img-hover"
+                onclick="openModal();currentSlide(1)"
+                src="images/image-product-1-thumbnail.jpg"
+                alt=""
+              />
+              </div>
+              <div class="overlay">
+                <img
+                class="img-hover"
+                onclick="openModal();currentSlide(2)"
+                src="images/image-product-2-thumbnail.jpg"
+                alt=""
+              />
+              </div>
+              <div class="overlay">
+                <img
+                class="img-hover"
+                onclick="openModal();currentSlide(3)"
+                src="images/image-product-3-thumbnail.jpg"
+                alt=""
+              />
+              </div>
+              <div class="overlay">
+                <img
+                class="img-hover"
+                onclick="openModal();currentSlide(4)"
+                src="images/image-product-4-thumbnail.jpg"
+                alt=""
+              />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- left-div-end -->
+        <!-- right-div -->
+        <div class="right-div">
+          <div class="logo">
+            <p class="logo-head">SNEAKER COMPANY</p>
+            <h1>Fall Limited Edition <br> Sneakers</h1>
+            <div class="message">
+              <p>These low-profile sneakers are your perfect casual wear <br> companion. Featuring a durable rubber outer sole, they’ll <br> withstand everything the weather can offer.</p>
+            </div>
+            <div class="no">
+              <h2>$125.00 <span class="per">50%</span></h2>
+              <p class="was">$250.00</p>
+            </div>
+          </div>
+          <div class="btn">
+            <div class="order">
+              <button class="p" onclick="minus();">&minus;</button>
+              <button id="no">0</button>
+              <button class="p" onclick="add();">&plus;</button>
+            </div>
+            <div class="cart-click">
+              <button onclick="cart();" class="click">
+                <p><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="hsl(219, 9%, 98%)" fill-rule="nonzero"/></svg> <span class="msg">Add To Cart</span></p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- right-div-end -->
+      </div>
+      <!-- page-end -->
+      <!-- light-box -->
+      <div id="light-box" class="lightbox">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="lightbox-pics">
+          <div class="pic pic1">
+            <img src="images/image-product-1.jpg" alt="" />
+          </div>
+          <div class="pic pic2">
+            <img src="images/image-product-2.jpg" alt="" />
+          </div>
+          <div class="pic pic3">
+            <img src="images/image-product-3.jpg" alt="" />
+          </div>
+          <div class="pic pic4">
+            <img src="images/image-product-4.jpg" alt="" />
+          </div>
+          <div class="buttons">
+            <a class="next" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="prev" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <div class="light-thumb">
+            <img
+              class="thumbs"
+              onclick="currentSlide(1)"
+              src="images/image-product-1-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="thumbs"
+              onclick="currentSlide(2)"
+              src="images/image-product-2-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="thumbs"
+              onclick="currentSlide(3)"
+              src="images/image-product-3-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="thumbs"
+              onclick="currentSlide(4)"
+              src="images/image-product-4-thumbnail.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- light-box -->
+    </div>
+    <p loop="1" stop(center)>Copyright © Olusola Oluwaferanmi | 2023 </>
+    <script src="script.js"></script>
+  </body>
+</html>
